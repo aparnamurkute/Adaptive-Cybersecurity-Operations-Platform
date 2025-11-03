@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ACOP Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Adaptive Cybersecurity Operations Platform</h1>
+    <table>
+        <tr><th>IP</th><th>Threat Type</th><th>Severity</th><th>Action</th><th>Timestamp</th></tr>
+        {% for a in actions %}
+        <tr>
+            <td>{{ a.ip }}</td>
+            <td>{{ a.type }}</td>
+            <td class="{{ a.severity|lower }}">{{ a.severity }}</td>
+            <td>{{ a.action }}</td>
+            <td>{{ a.time }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
 
